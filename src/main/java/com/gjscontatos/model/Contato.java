@@ -38,5 +38,8 @@ public class Contato {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	
+
+	public boolean isNovo() {
+		return id == null;
+	}
 }
