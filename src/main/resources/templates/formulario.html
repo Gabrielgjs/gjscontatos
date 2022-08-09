@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width" />
-	<title>GJS Contatos</title>
-	
-	<link rel="stylesheet" th:href="@{/css/style.css}" />
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width"/>
+
+<title>GJS Contato</title>
+
+<link rel="stylesheet" th:href="@{/css/style.css}" />
 
 </head>
 
@@ -14,7 +16,7 @@
 	<header>
 		<nav>
 			<ul>
-				<li><a th:href="@{/}"> GJS Contatos </a></li>
+				<li><a th:href="@{/}"> Lista Contatos </a></li>
 
 				<li><a th:href="@{/contatos}"> Listar </a></li>
 
@@ -23,32 +25,32 @@
 		</nav>
 
 	</header>
-
+	
 	<main>
 		<section>
 			<h1>Cadastro contatos</h1>
 		</section>
 
 		<section>
-			<form th:action="${contato.novo} ? @{/contatos} : @{/contatos/{contato}(contato=${contato.id})}"
+			<form th:action="${contato.novo} ? @{/contatos} : @{/contatos/{contato}(contato=${contato.id})}" 
 				th:object="${contato}" th:method="${contato.novo} ? post : put">
-
+				
 				<div th:if="${!contato.novo}">
-					<label>Código: </label>
-
+					<label>Código: </label> 
+					
 					<input th:field="*{id}" readonly="readonly" />
 				</div>
-
+				
 				<div>
-					<label>Nome: </label>
-
+					<label>Nome: </label> 
+					
 					<input th:field="*{nome}" />
 				</div>
 
 				<div>
-					<label>Telefone: </label>
-
-					<input th:field="*{telefone}" />
+					<label>Telefone: </label> 
+					
+					<input th:field="*{telefone}"/>
 				</div>
 
 				<div>
